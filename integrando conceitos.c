@@ -112,59 +112,70 @@ int main()
 { 
     int opcao=0; //definindo variaveis
     int laco=1;
+    char senhadigitada[10]="a";
+    int comparacao;
     
-     for(laco=1;laco=1;)
+    printf("###Cartorio da EBAC###\n\n");
+    printf("login de administrador!\n\n digite a sua senha: ");
+    scanf("%s", senhadigitada);
+    
+    comparacao = strcmp(senhadigitada, "admin");
+    
+    
+    if(comparacao == 0)
     {
-    	
-    	system("cls");
-    	
+	
+       system ("cls");
     
-    
-	setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
+       for(laco=1;laco=1;)
+        {
+    	
+          setlocale(LC_ALL, "Portuguese"); //definindo a linguagem
 	
-	printf("###Cartório da EBAC###\n\n"); //inicio do menu
-	printf("Escolha a opção desejada do Menu\n\n");
-	printf("\t1 - Registrar Nome\n");
-	printf("\t2 - Consultar Nome\n");
-	printf("\t3 - Deletar Nome\n\n");
-	printf("\t4 - sair do sistema\n\n");
-	printf("opção:");  // fim do menu
+	      printf("###Cartório da EBAC###\n\n"); //inicio do menu
+	      printf("Escolha a opção desejada do Menu\n\n");
+          printf("\t1 - Registrar Nome\n");
+	      printf("\t2 - Consultar Nome\n");
+	      printf("\t3 - Deletar Nome\n\n");
+	      printf("\t4 - sair do sistema\n\n");
+	      printf("opção:");  // fim do menu
 	
-	scanf("%d" , &opcao); // armazenando a escolha do usuario
+	      scanf("%d" , &opcao); // armazenando a escolha do usuario
 	
-	system("cls"); //responsavel por limpar a tela
+	      system("cls"); //responsavel por limpar a tela
 	
-	switch (opcao)
-	{
-		case 1:
+	      switch (opcao)
+	      {
+	        case 1:
 			registro(); // chamada de funções
 			break;
 		
-		case 2:
+		    case 2:
 			consulta();
 		    break;
 		
-		case 3:
+		    case 3:
 			 deletar();
 		     break;
 		     
-		case 4:
+		    case 4:
 			 printf("obrigado por utilizar o sistema!\N");
 			 return 0;
 			 break;
 		
 		
-		default:
-		printf("essa opção não está disponivel!\n");
-		system ("pause"); 
-		break;
-		} // fim da seleção 
+		    default:
+		    printf("essa opção não está disponivel!\n");
+		    system ("pause"); 
+		    break;
+		    } // fim da seleção 
 
+        }
+   }  
+     else
+          printf( "senha incorreta!");
+      }
 
-	
-	
-    }
-}
 
 
 
